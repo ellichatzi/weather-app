@@ -1,0 +1,76 @@
+body {
+  font-family: Arvo, sans-serif;
+}
+.page {
+  max-width: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(189, 232, 202, 0.8) 21%,
+    rgba(193, 223, 212, 0.8) 67%
+  );
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 10px 10px 5px #5a6275;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 26px;
+  color: #5a6275;
+}
+h2 {
+  font-size: 20px;
+  color: #5a6275;
+}
+.day {
+  font-weight: bold;
+  color: #5a6275;
+  opacity: 0.8;
+}
+.time {
+  color: #5a6275;
+  opacity: 0.8;
+}
+.temperature {
+  font-weight: bold;
+  color: #5a6275;
+  opacity: 0.8;
+}
+.temp {
+  font-weight: bolder;
+  color: #006ec5;
+  opacity: 0.8;
+  font-size: 90px;
+}
+.searchCity {
+  margin: 30px 50px 20px 50px;
+  text-align: center;
+}
+.weather {
+  font-size: 20px;
+  font-weight: normal;
+}
+.date {
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+.row {
+  text-align: center;
+  color: #5a6275;
+  font-size: 15px;
+}
+.degrees {
+  margin-bottom: 40px;
+  color: #5a6275;
+}
+.wind {
+  margin-bottom: 30px;
+}
+.precipitation,
+.wind {
+  color: #006ec5;
+  font-weight: 650;
+  font-size: 22px;
+  line-height: 15px;
+}

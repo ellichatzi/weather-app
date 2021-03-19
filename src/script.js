@@ -68,8 +68,8 @@ function showTemperature(response) {
 }
 
 function getCurrentPosition(position) {
-  let lon = console.log(position.coords.longitude);
-  let lat = console.log(position.coords.latitude);
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
   let apiKey = "9b4ea4a09ca2cf04ce4190565f6f899b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);

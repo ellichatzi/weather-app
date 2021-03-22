@@ -19,14 +19,14 @@ h1 {
   font-size: 26px;
   color: #5a6275;
 }
-h2 {
+
+.day {
   font-size: 20px;
   color: #5a6275;
-}
-.day {
   font-weight: bold;
   color: #5a6275;
   opacity: 0.8;
+  list-style: none;
 }
 .time {
   color: #5a6275;
@@ -63,13 +63,20 @@ h2 {
   margin-bottom: 40px;
   color: #5a6275;
 }
-.wind {
-  margin-bottom: 30px;
-}
+
 .precipitation,
 .wind,
 .humidity {
   color: #006ec5;
   font-weight: 650;
-  font-size: 22px;
+  font-size: 17px;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  display: inline;
+}
+
+.unitlinks {
+  font-size: 20px;
 }

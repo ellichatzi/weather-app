@@ -80,3 +80,9 @@ h1 {
 .unitlinks {
   font-size: 20px;
 }
+
+.locationButton {
+  margin: 0 auto 20px;
+  border-radius: 7px;
+  text-align: center;
+}

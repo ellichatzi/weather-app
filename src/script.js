@@ -18,7 +18,7 @@ let weekdays = [
   "Friday",
   "Saturday",
 ];
-let day = document.querySelector("h2.day");
+let day = document.querySelector(".dayToday");
 let now = new Date();
 let minutes = now.getMinutes();
 let hour = now.getHours();
@@ -32,7 +32,7 @@ if (minutes < 10) {
 }
 
 day.innerHTML = `${currentDay}`;
-let time = document.querySelector("h2.time");
+let time = document.querySelector("li.time");
 time.innerHTML = `${hour}:${minutes}`;
 
 function presentCity(event) {

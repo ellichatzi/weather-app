@@ -18,18 +18,18 @@
   <body>
     <div class="page">
       <div class="weatherappwrapper">
-    <div class="container">
+      <div class="container">
       <form class="searchCity" id="cityForm">
         <input type="search" placeholder="Enter a city" id="enterCity"/>
         <input type="submit" value="Search" />
       </form>
-      <button> Get my location </button>
+      <div class="locationButton"><button> Get my location </button></div>
       <h1><span class="weather">Mostly sunny in</span><span id="currentCity"> Athens, Greece.</span></h1>
       <div class="row">
         <div class="col-8">
-        <div class="date"><ul class="day"><li> Friday</li>
+        <div class="date"><ul class="day"><li class="dayToday"> Friday</li>
         <li class="time">13:15</li>
-        <li class= "temperature">Temperature: <li></li></ul>
+        <li class= "temperature">Temperature: </ul>
           <span class="temp" id= "temperature"><img src="https://openweathermap.org/img/wn/10d@2x.png" alt=""> 18<span class="units"></span>º 
           
           <span class="unitlinks"><a href="#" id="celsius-link">°C</a> |<a href="#" id="fahrenheit-link">°F</a></span>

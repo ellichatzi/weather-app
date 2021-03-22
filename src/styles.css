@@ -52,11 +52,10 @@ h2 {
   font-weight: normal;
 }
 .date {
-  margin-left: 100px;
+  margin-left: 50px;
   margin-bottom: 50px;
 }
 .row {
-  text-align: center;
   color: #5a6275;
   font-size: 15px;
 }
@@ -68,9 +67,9 @@ h2 {
   margin-bottom: 30px;
 }
 .precipitation,
-.wind {
+.wind,
+.humidity {
   color: #006ec5;
   font-weight: 650;
   font-size: 22px;
-  line-height: 15px;
 }

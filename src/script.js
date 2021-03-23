@@ -1,13 +1,14 @@
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}º`;
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let weekdays = [
   "Sunday",
@@ -59,12 +60,29 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
+let celsiusTemperature = null;
+
 function showTemperature(response) {
+  console.log(response.data);
   let tempResponse = Math.round(response.data.main.temp);
   let currentCity = document.querySelector("#currentCity");
   let presentTemp = document.querySelector("#temperature");
+  let iconElement = document.querySelector("#icon");
+  let description = document.querySelector("#description");
+  let windSpeed = document.querySelector(".wind");
+  let humidity = document.querySelector(".humidity");
+
+  celsiusTemperature = Math.round(response.data.main.temp);
+
   presentTemp.innerHTML = `${tempResponse}º`;
   currentCity.innerHTML = ` ${response.data.name}`;
+  description.innerHTML = `${response.data.weather[0].description} in`;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  humidity.innerHTML = `${response.data.main.humidity}`;
 }
 
 function getCurrentPosition(position) {
@@ -81,3 +99,5 @@ function retrievePosition(event) {
 
 let button = document.querySelector("button");
 button.addEventListener("click", retrievePosition);
+
+searchCity("Athens");

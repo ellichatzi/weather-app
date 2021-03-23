@@ -81,6 +81,8 @@ h1 {
   font-size: 20px;
   position: relative;
   top: -50px;
+  cursor: default;
+  text-decoration: none;
 }
 
 .locationButton {
@@ -101,7 +103,9 @@ h1 {
 .unitlinks .active {
   color: black;
   text-decoration: none;
+  cursor: default;
 }
-.unitlinks .active:hover {
+.unitlinks:hover {
+  text-decoration: none;
   cursor: default;
 }

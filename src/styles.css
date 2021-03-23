@@ -79,10 +79,29 @@ h1 {
 
 .unitlinks {
   font-size: 20px;
+  position: relative;
+  top: -50px;
 }
 
 .locationButton {
   margin: 0 auto 20px;
   border-radius: 7px;
   text-align: center;
+}
+
+#icon {
+  float: left;
+  height: 128px;
+}
+
+#description {
+  text-transform: capitalize;
+}
+
+.unitlinks .active {
+  color: black;
+  text-decoration: none;
+}
+.unitlinks .active:hover {
+  cursor: default;
 }

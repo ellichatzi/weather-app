@@ -4,86 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/styles.css" 
-    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="page">
       <div class="weatherappwrapper">
-      <div class="container">
-      <form class="searchCity" id="cityForm">
-        <input type="search" placeholder="Enter a city" id="enterCity"/>
-        <input type="submit" value="Search" />
-      </form>
-      <div class="locationButton"><button> Get my location </button></div>
-      <h1><span class="weather">Mostly sunny in</span><span id="currentCity"> Athens, Greece.</span></h1>
-      <div class="row">
-        <div class="col-8">
-        <div class="date"><ul class="day"><li class="dayToday"> Friday</li>
-        <li class="time">13:15</li>
-        <li class= "temperature">Temperature: </ul>
-          <span class="temp" id= "temperature"><img src="https://openweathermap.org/img/wn/10d@2x.png" alt=""> 18<span class="units"></span>º 
-          
-          <span class="unitlinks"><a href="#" id="celsius-link">°C</a> |<a href="#" id="fahrenheit-link">°F</a></span>
-        </div>
-        </div>
+        <div class="container">
+          <form class="searchCity" id="cityForm">
+            <input type="search" placeholder="Enter a city" id="enterCity" />
+            <input type="submit" value="Search" />
+          </form>
+          <div class="locationButton"><button>Get my location</button></div>
+          <h1>
+            <span class="weather" id="description">Mostly sunny in</span
+            ><span id="currentCity"> Athens, Greece.</span>
+          </h1>
+          <div class="row">
+            <div class="col-8">
+              <div class="date">
+                <ul class="day">
+                  <li class="dayToday">Friday</li>
+                  <li class="time">13:15</li>
+                  <li class="temperature">Temperature:</li>
+                </ul>
+                <img
+                  id="icon"
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt=""
+                />
+                <span class="temp" id="temperature" class="float"> 18</span
+                ><span class="units"></span>
+
+                <span class="unitlinks"
+                  ><a href="#" id="celsius-link" class="active">°C</a> |<a
+                    href="#"
+                    id="fahrenheit-link"
+                    >°F</a
+                  ></span
+                >
+              </div>
+            </div>
             <div class="col-4">
               <ul>
-                <li class="precipitation">
-                  Precipitation: 0%
-                </li>
-                <li class="humidity">Humidity: 53%</li>
-                <li class="wind">
-                  Wind: 0 km/h
-                </li>
+                <li>Precipitation: <span class="precipitation"> 0%</span></li>
+                <li>Humidity: <span class="humidity"> 53% </span></li>
+                <li>Wind: <span class="wind">0 km/h </span></li>
               </ul>
-        </div>
-        </div>
-         
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">Saturday</div>
+            <div class="col">Sunday</div>
+            <div class="col">Monday</div>
+            <div class="col">Tuesday</div>
+            <div class="col">Wednesday</div>
+            <div class="col">Thursday</div>
+            <div class="col">Friday</div>
+          </div>
+          <div class="emojis">
             <div class="row">
-              <div class="col">Saturday</div>
-              <div class="col">Sunday</div>
-              <div class="col">Monday</div>
-              <div class="col">Tuesday</div>
-              <div class="col">Wednesday</div>
-              <div class="col">Thursday</div>
-              <div class="col">Friday</div>
+              <div class="col">☀️</div>
+              <div class="col">⛅</div>
+              <div class="col">⛅</div>
+              <div class="col">⛅</div>
+              <div class="col">⛅</div>
+              <div class="col">⛅</div>
+              <div class="col">⛅</div>
             </div>
-            <div class="emojis">
-              <div class="row">
-                <div class="col">☀️</div>
-                <div class="col">⛅</div>
-                <div class="col">⛅</div>
-                <div class="col">⛅</div>
-                <div class="col">⛅</div>
-                <div class="col">⛅</div>
-                <div class="col">⛅</div>
-              </div>
+          </div>
+          <div class="degrees">
+            <div class="row">
+              <div class="col">19º | 9º</div>
+              <div class="col">19º | 14º</div>
+              <div class="col">19º | 11º</div>
+              <div class="col">18º | 12º</div>
+              <div class="col">18º | 12º</div>
+              <div class="col">18º | 8º</div>
+              <div class="col">17º | 8º</div>
             </div>
-            <div class="degrees">
-              <div class="row">
-                <div class="col">19º | 9º</div>
-                <div class="col">19º | 14º</div>
-                <div class="col">19º | 11º</div>
-                <div class="col">18º | 12º</div>
-                <div class="col">18º | 12º</div>
-                <div class="col">18º | 8º	</div>
-                <div class="col">17º | 8º</div>
-              </div>
-            </div>
-          
+          </div>
         </div>
-        <a href="https://github.com/ellichatzi/weather-app"> Open Source code</a> by Elli Chatzineofytou
+        <a href="https://github.com/ellichatzi/weather-app">
+          Open Source code</a
+        >
+        by Elli Chatzineofytou
       </div>
     </div>
     <script src="src/script.js"></script>
-      </body>
-        </html>
+  </body>
+</html>

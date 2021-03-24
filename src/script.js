@@ -41,6 +41,20 @@ day.innerHTML = `${currentDay}`;
 let time = document.querySelector("li.time");
 time.innerHTML = `${hour}:${minutes}`;
 
+function formatHours(timestamp) {
+  let date = new Date();
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+
+  if (hours < 10) {
+    hour = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 function presentCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#enterCity");
@@ -49,11 +63,34 @@ function presentCity(event) {
 
   searchCity(searchInput.value);
 }
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+  forecastElement.innerHTML = `
+            <div class="col-2">
+              <h3 class="forecast-Time">${formatHours(forecast.dt * 1000)}</h3>
+              <img
+               src=     "https://openweathermap.org/img/wn/${
+                 forecast.weather[0].icon
+               }@2x.png"
+
+                id="forecast-icon"
+              />
+              <div class="forecast-temperature"><strong>${Math.round(
+                forecast.main.temp_max
+              )}º</strong>|${Math.round(forecast.main.temp_min)}º</div>
+            </div>
+          `;
+}
 
 function searchCity(city) {
   let apiKey = "9b4ea4a09ca2cf04ce4190565f6f899b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
+
+  let apiForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiForecast).then(displayForecast);
 }
 
 let citySearch = document.querySelector("#cityForm");
@@ -87,7 +124,7 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
-  humidity.innerHTML = `${response.data.main.humidity}`;
+  humidity.innerHTML = `${response.data.main.humidity}%`;
 }
 
 function getCurrentPosition(position) {

@@ -25,9 +25,11 @@
         <div class="container">
           <form class="searchCity" id="cityForm">
             <input type="search" placeholder="Enter a city" id="enterCity" />
-            <input type="submit" value="Search" />
+            <input type="submit" value="Search" id="searchButton" />
           </form>
-          <div class="locationButton"><button>Get my location</button></div>
+          <div class="locationButton">
+            <button id="getLocationButton">Get my location</button>
+          </div>
           <h1>
             <span class="weather" id="description">Mostly sunny in</span
             ><span id="currentCity"> Athens, Greece.</span>
@@ -67,12 +69,11 @@
 
           <div class="row" id="weather-forecast"></div>
         </div>
-        <a href="https://github.com/ellichatzi/weather-app">
-          Open Source code</a
-        >
-        by Elli Chatzineofytou
+        <script src="src/script.js"></script>
+        <br />
       </div>
+      <a href="https://github.com/ellichatzi/weather-app"> Open Source code</a>
+      by Elli Chatzineofytou
     </div>
-    <script src="src/script.js"></script>
   </body>
 </html>

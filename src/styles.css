@@ -43,6 +43,20 @@ h1 {
   opacity: 0.8;
   font-size: 90px;
 }
+#enterCity {
+  background: #e3ede9;
+  border-radius: 6px;
+  padding: 2px 3px 2px 4px;
+}
+#searchButton {
+  background: #e3ede9;
+  border-radius: 6px;
+  padding: 2px 3px 2px 4px;
+}
+#getLocationButton {
+  border-radius: 12px;
+  padding: 5px 10px;
+}
 .searchCity {
   margin: 30px 50px 20px 50px;
   text-align: center;
@@ -87,7 +101,6 @@ h1 {
 
 .locationButton {
   margin: 0 auto 20px;
-  border-radius: 7px;
   text-align: center;
 }
 

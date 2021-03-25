@@ -3,6 +3,9 @@ body {
 }
 .page {
   max-width: 800px;
+  margin: 0 auto;
+}
+.weatherappwrapper {
   background: radial-gradient(
     circle,
     rgba(189, 232, 202, 0.8) 21%,

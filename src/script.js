@@ -139,6 +139,9 @@ function getCurrentPosition(position) {
   let apiKey = "9b4ea4a09ca2cf04ce4190565f6f899b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
+
+  let apiForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiForecast).then(displayForecast);
 }
 function retrievePosition(event) {
   event.preventDefault();
